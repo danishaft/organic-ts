@@ -1,0 +1,100 @@
+@use '/src//assets/styles/style.scss' as g;
+a{
+  text-decoration: none;
+}
+.menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+  }
+  .menu > svg{
+    width: min(20vw, 3em);
+    height: 3em;
+  }
+  .line {
+    fill: none;
+    stroke: g.$primary-black;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line1 {
+    stroke-dasharray: 50 207;
+    stroke-width: 4;
+  }
+  .line2 {
+    stroke-dasharray: 50 60;
+    stroke-width: 4;
+  }
+  .line3 {
+    stroke-dasharray: 50 207;
+    stroke-width: 4;
+  }
+  .opened .line1 {
+    stroke-dasharray: 50 207;
+    stroke-dashoffset: -145;
+    stroke-width: 4;
+  }
+  .opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 4;
+  }
+  .opened .line3 {
+    stroke-dasharray: 50 207;
+    stroke-dashoffset: -144;
+    stroke-width: 4;
+  }
+  header{
+    background: #ffff;
+  }
+  .flex__row{
+    @include g.flex--row;
+    justify-content: flex-start;
+  }
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80em;
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    background: #ffff;
+    &__logo{
+      width: min(32vw, 12em);
+    }
+    &__logo > img{
+      width: 100%;
+    }
+    &__nav{
+      position: fixed;
+      z-index: 100;
+      right: 0;
+      top: 0;
+        background: g.$primary-white2;
+        text-align: left;
+        width: 50%;
+        height: 100%;
+        padding: 3em 0;
+    }
+  }
+  .list__group{
+    margin: 0 auto;
+  }
+  .list__group li{
+    margin-bottom: 1.8em;
+    @include g.font-size(.9rem, 20vw, 1.2rem);
+  }
+  .list__group li a{
+    color: g.$primary-blue;
+  }
+  .page > ul{
+    display: none;
+  }
+  .closed{
+    display: none;
+  }
+  

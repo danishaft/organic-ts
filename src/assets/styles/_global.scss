@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  color:#274C5B;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+//colors
+$primary-blue: #274C5B;
+$primary-green: #7EB693;
+$primary-yellow: #EFD372;
+$primary-grey: #D4D4D4;
+$primary-white1: #EFF6F1;
+$primary-white2: #F9F8F8;
+$primary-black: #525C60;
+$secondary_blue: #335B6B;
+
+//Additional font family
+//Additional font
+@mixin open-sans{
+    font-family: 'Open Sans', sans-serif;
+  }
+  @mixin roboto{
+    font-family: 'Roboto', sans-serif;
+  }
+  @mixin yellowtail{
+    font-family: 'Yellowtail', cursive;
+  }
+
+  //font-size
+@mixin font-size($min, $val, $max){
+    font-size: clamp($min, $val, $max);
+  }
+
+ main{
+  margin-top: 5em;
+ } 
+ @mixin flex--row{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+ }

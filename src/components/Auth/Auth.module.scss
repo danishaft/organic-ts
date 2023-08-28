@@ -1,0 +1,65 @@
+@use "../../assets/styles/style.scss" as g;
+.auth{
+    max-width: 50rem;
+    background: #fff;
+    box-shadow: 6px 8px 22px -1px rgba(150,145,145,0.56);
+    -webkit-box-shadow: 6px 8px 22px -1px rgba(150,145,145,0.56);
+    -moz-box-shadow: 6px 8px 22px -1px rgba(150,145,145,0.56);
+    margin: 3em 2em;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+.right img{
+    width: 100%;
+    aspect-ratio: 2 / 1.5;
+    object-fit: fill;
+    border-radius: 1em;
+}
+.left{
+    margin-top: 1em;
+}
+.left div{
+    margin-bottom: .7em ;
+    max-width: 50em;
+}
+label, input{
+    display: block;
+}
+label{
+    @include g.font-size(.5rem, 20vw, .8rem);
+    font-weight: bold
+}
+input{
+    border-radius: .5em;
+    border: 1px solid g.$primary-green;
+    outline: none;
+    width: 100%;
+    padding: .5em 0;
+}
+.sepration{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+}
+.sepration div{
+    width: 100px;
+    height: 1px;
+    background: g.$primary-green;
+}
+.option{
+    background: #ffff;
+    box-shadow: 2px 3px 9px -1px rgba(78,72,72,0.26);
+    -webkit-box-shadow: 2px 3px 9px -1px rgba(78,72,72,0.26);
+    -moz-box-shadow: 2px 3px 9px -1px rgba(78,72,72,0.26);
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .6em 1.2em;
+    border-radius: .8em;
+}
+.google{
+    margin-right: .3em;
+}

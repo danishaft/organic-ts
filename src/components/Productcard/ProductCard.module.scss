@@ -1,0 +1,32 @@
+@use '../../assets/styles/style.scss' as g;
+.shop__product{
+    background: g.$primary-white2;
+    border-radius: 1em;
+    padding: 2em
+}
+.product__tag{
+    @include g.font-size(.3rem, 20vw, .8rem);
+    background: g.$primary-blue;
+    color: #ffff;
+    width: fit-content;
+    padding: .8em 1.6rem;
+    border-radius: .8em;
+}
+.img__container{
+    position: relative;
+    width: 100%;
+    color: black;
+}
+.img__overlay{
+    position: absolute;
+    height: 100%;
+    width: inherit;
+}
+figcaption{
+    border-top: 2px solid #DEDDDD;
+    display: flex;
+}
+.rating{
+    color: red;
+    margin-left: auto;
+}
