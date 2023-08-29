@@ -1,31 +1,31 @@
 @use '../../assets/styles/style.scss' as g;
-.hero__sec {
-    width: 100%;
-    display: grid;
-    gap: 1rem;
-}
-.hero__sec > * {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-}
-.hero__sec > img {
-    transform: rotate(90deg);
-    width: 100em;
-    aspect-ratio: 2 / 2;
-    object-fit: cover;
-    z-index: -1;
-}
-.hero__content{
-    width: 80%;
-    justify-self: center;
-    margin-top: 10%;
-}
-.hero__content > p{
+// .hero__sec {
+//     width: 100%;
+//     display: grid;
+//     gap: 1rem;
+// }
+// .hero__sec > * {
+//     grid-column: 1 / 2;
+//     grid-row: 1 / 2;
+// }
+// .hero__sec > picture {
+//     // transform: rotate(90deg);
+//     width: 100em;
+//     aspect-ratio: 1 / 0.8;
+//     object-fit: cover;
+//     z-index: -1;
+// }
+// .hero__content{
+//     max-width: 80%;
+//     justify-self: center;
+//     align-self: center;
+// }
+.homepage__hero  p{
     @include g.yellowtail;
-    @include g.font-size(1rem, 25vw, 1.4rem)
+    @include g.font-size(1rem, 25vw, 1.3rem)
 }
-.hero__content > h1{
-    @include g.font-size(1.5rem, 35vw, 2rem)
+.homepage__hero  h1{
+    @include g.font-size(1.5rem, 35vw, 1.7rem)
 }
 .advert__sec{
     max-width: 80em;
@@ -85,10 +85,18 @@
     @include g.font-size(.5rem, 20vw, .8rem);
     color: g.$primary-black;
 }
-
-
 .shop__sec{
     max-width: 80em;
     padding: 3em;
     margin: 0 auto;
+}
+
+//responsive breakpoints
+@include g.tablet{
+    .homepage__hero  p{
+        @include g.font-size(1.2rem, 30vw, 1.6rem)
+    }
+    .homepage__hero  h1{
+        @include g.font-size(1.5rem, 35vw, 2.2rem)
+    }
 }

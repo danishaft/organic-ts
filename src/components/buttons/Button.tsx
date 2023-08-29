@@ -6,7 +6,6 @@ type ButtonProps = {
     spec: string;
     bgColor?: string;
     content: string;
-    onClick: () => void;
 }
 function Button (props: ButtonProps) {
     const {color, spec, bgColor, content, type, onClick} = props;

@@ -1,6 +1,7 @@
 
 import styles from "./HomePage.module.scss"
 import bgImg from "../../assets/images/Banner.jpg"
+import bgImgMb from "../../assets/images/1111.jpg"
 import AdsImg1 from "../../assets/images/bananaAds.png"
 import AdsImg2 from "../../assets/images/appleAds.png"
 import aboutImg from "../../assets/images/about.png"
@@ -9,17 +10,17 @@ import vegan from "../../assets/images/Vegan Food.png"
 import broccoli from "../../assets/images/broccoli.png"
 import Button from "../../components/buttons/Button"
 import ProductCard from "../../components/Productcard/ProductCard"
+import Hero from "../../components/Hero/Hero"
 function HomePage() {
   return (
     <main>
       {/* start of the homepage hero section */}
-      <section className={styles.hero__sec}>
-        <img src={bgImg} alt="background image" />
-        <div className={styles.hero__content}>
-          <p>100% Natural Food</p>
-          <h1>Choose the best healthier way of life</h1>
-          <Button color={'#274C5B'} spec={'default'} bgColor={'#EFD372'} content={'Explore Now'} />
-        </div>
+      <section className={styles.homepage__hero}>
+        <Hero media={'(min-width: 48em)'} srcSet={bgImg} src={bgImgMb}>
+            <p>100% Natural Food</p>
+            <h1>Choose the best healthier way of life</h1>
+            <Button type={'button'} color={'#274C5B'} spec={'default'} bgColor={'#EFD372'} content={'Explore Now'} />
+        </Hero>
       </section>
       {/* end of the homepage hero section */}
       {/*start of fruit Advert section */}

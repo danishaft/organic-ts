@@ -21,6 +21,9 @@ dd {
   margin: 0;
   color:#274C5B;
 }
+body{
+  background: #ffff;
+}
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role='list'],
@@ -109,6 +112,12 @@ $secondary_blue: #335B6B;
  } 
  @mixin flex--row{
   display:flex;
+  justify-content: center;
+  align-items: center;
+ }
+ @mixin flex--column{
+  display:flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
  }

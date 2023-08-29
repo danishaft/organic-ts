@@ -10,8 +10,9 @@ a{
     padding: 0;
   }
   .menu > svg{
-    width: min(20vw, 3em);
-    height: 3em;
+    width: min(20vw, 2.3em);
+    height: 2.3em;
+    @include g.flex--row;
   }
   .line {
     fill: none;
@@ -48,53 +49,113 @@ a{
     stroke-width: 4;
   }
   header{
-    background: #ffff;
-  }
-  .flex__row{
-    @include g.flex--row;
-    justify-content: flex-start;
-  }
-  .header{
+    width: 100%;
+    padding: 1.3em;
+    position: fixed;
+    top: 0;
+    background-color: #ffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 80em;
-    padding: 1em;
+  }
+  .header__left{
+    @include g.flex--row;
+  }
+  .header__logo{
+    width: min(30vw, 8em);
+    margin-left: .4em;
+  }
+  .header__logo > img{
+    width: 100%;
+  }
+  .header__navmobile{
     position: fixed;
-    top: 0;
-    background: #ffff;
-    &__logo{
-      width: min(32vw, 12em);
-    }
-    &__logo > img{
-      width: 100%;
-    }
-    &__nav{
-      position: fixed;
       z-index: 100;
-      right: 0;
+      left: 0;
       top: 0;
-        background: g.$primary-white2;
+        background: #ffff;
         text-align: left;
-        width: 50%;
         height: 100%;
-        padding: 3em 0;
-    }
+        padding: 1.3em 2.5em 1.3em 1.3em;
   }
-  .list__group{
-    margin: 0 auto;
+  .header__navmobile .header__left{
+    width: fit-content;
+    margin-left: 0;
   }
-  .list__group li{
-    margin-bottom: 1.8em;
-    @include g.font-size(.9rem, 20vw, 1.2rem);
+  .list__groupmobile{
+    @include g.flex--column;
+    align-items: flex-start;
+    gap: 1.5em;
+    width: 100%;
+    margin: 1.5em 1em;
+    padding: 0;
   }
-  .list__group li a{
+  .list__groupmobile li{
+    @include g.font-size(.8rem, 20vw, 1rem);
+    // margin-bottom: 1.8em;
+  }
+  .list__groupmobile li a{
     color: g.$primary-blue;
   }
   .page > ul{
     display: none;
   }
+  .header__nav{
+    display: none;
+  }
+  .header__icons{
+    @include g.flex--row;
+    @include g.font-size(.7rem, 25vw, 1.2rem);
+    gap: .6em;
+  }
+  .header__icons span{
+    display: inline-block;
+    @include g.flex--row;
+    border-radius: 50%;
+    max-width: min(2em, 2em);
+    min-width: 1em;
+    height: 2em;
+    width: min(30vw, 11em);
+    color: #ffff;
+  }
+  .header__icons span:nth-child(1){
+    background: g.$primary-green;
+  }
+  .header__icons span:nth-child(2){
+    background: g.$primary-blue;
+  }
+  //
   .closed{
     display: none;
   }
-  
+  .mobile{
+    display: block;
+  }
+
+  //media breakpoint
+  @include g.desktop{
+    .mobile{
+      display: none;
+    }
+    header{
+      padding: 1.5em 3em;
+    }
+    .header__nav{
+      display: block;
+    }
+    .list__group{
+      @include g.flex--row;
+      gap: 1.5em;
+      // margin: 0 auto;
+    }
+    .list__group li{
+      @include g.font-size(.9rem, 20vw, 1.2rem);
+      // margin-bottom: 1.8em;
+    }
+    .list__group li a{
+      color: g.$primary-blue;
+    }
+    .page > ul{
+      display: none;
+    }
+  }
