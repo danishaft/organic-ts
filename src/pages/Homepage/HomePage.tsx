@@ -10,16 +10,18 @@ import vegan from "../../assets/images/Vegan Food.png"
 import broccoli from "../../assets/images/broccoli.png"
 import Button from "../../components/buttons/Button"
 import ProductCard from "../../components/Productcard/ProductCard"
-import Hero from "../../components/Hero/Hero"
+import Hero from "../../containers/Hero/Hero"
 function HomePage() {
   return (
     <main>
       {/* start of the homepage hero section */}
       <section className={styles.homepage__hero}>
         <Hero media={'(min-width: 48em)'} srcSet={bgImg} src={bgImgMb}>
-            <p>100% Natural Food</p>
-            <h1>Choose the best healthier way of life</h1>
-            <Button type={'button'} color={'#274C5B'} spec={'default'} bgColor={'#EFD372'} content={'Explore Now'} />
+            <div className={styles.hero__content}>
+              <p>100% Natural Food</p>
+              <h1>Choose the best healthier way of life</h1>
+              <Button type={'button'} color={'#274C5B'} spec={'default'} bgColor={'#EFD372'} content={'Explore Now'} />
+            </div>
         </Hero>
       </section>
       {/* end of the homepage hero section */}
@@ -37,6 +39,7 @@ function HomePage() {
       {/*end of fruit Advert section */}
       {/* start of about sec */}
       <section className={styles.about__sec}>
+        <img src={aboutImg} alt="about us image background"/>
           <div className={styles.about__content}>
             <p>About Us</p>
             <h1>We Believe in Working Accredited Farmers</h1>
@@ -63,18 +66,29 @@ function HomePage() {
                 </span>
               </div>
             </div>
-            <Button type={'default'} bgColor={'#274C5B'} content={'Shop Now'} />
+            <Button type="button" spec={'default'} bgColor={'#274C5B'} content={'Shop Now'} />
           </div>
-          {/* <img src={aboutImg} alt="about us image background"/> */}
       </section>
       {/* end of about sec */}
       {/* start of shop sec */}
       <section className={styles.shop__sec}>
         <div>
           <ProductCard tagName={'Vegetables'} img={broccoli} name={'Calabrese Broccoli'} oldPrice={'$20.00'} newPrice={'$13.00'} />
+          <ProductCard tagName={'Vegetables'} img={broccoli} name={'Calabrese Broccoli'} oldPrice={'$20.00'} newPrice={'$13.00'} />
+          <ProductCard tagName={'Vegetables'} img={broccoli} name={'Calabrese Broccoli'} oldPrice={'$20.00'} newPrice={'$13.00'} />
+          <ProductCard tagName={'Vegetables'} img={broccoli} name={'Calabrese Broccoli'} oldPrice={'$20.00'} newPrice={'$13.00'} />
+          <ProductCard tagName={'Vegetables'} img={broccoli} name={'Calabrese Broccoli'} oldPrice={'$20.00'} newPrice={'$13.00'} />
+          <ProductCard tagName={'Vegetables'} img={broccoli} name={'Calabrese Broccoli'} oldPrice={'$20.00'} newPrice={'$13.00'} />
+          <ProductCard tagName={'Vegetables'} img={broccoli} name={'Calabrese Broccoli'} oldPrice={'$20.00'} newPrice={'$13.00'} />
+          <ProductCard tagName={'Vegetables'} img={broccoli} name={'Calabrese Broccoli'} oldPrice={'$20.00'} newPrice={'$13.00'} />
         </div>
       </section>
       {/* end of shop sec */}
+      {/* start of testimonial */}
+        <section className={styles.testimonial__sec}>
+
+        </section>
+      {/* end of testimonial */}
     </main>
   )
 }

@@ -11,14 +11,15 @@ function ProductCard(props: productProps) {
     const {tagName, img, name, oldPrice, newPrice} = props
   return (
     <figure className={styles.shop__product}>
+        <div>
         <div className={styles.product__tag}>{tagName}</div>
+        </div>
         <div className={styles.img__container}>
-            <div className={styles.img__overlay}></div>
             <img src={img} alt={name}  />
         </div>
-        <p>{name}</p>
+        <p className={styles.product__name}>{name}</p>
         <figcaption>
-            <p>{oldPrice}</p>
+            <s>{oldPrice}</s>
             <p>{newPrice}</p>
             <span className={styles.rating}>
                 <BsStarFill/>

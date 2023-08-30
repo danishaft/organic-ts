@@ -15,7 +15,7 @@ function Hero(props: PictureProps) {
             <source media={media} srcSet={srcSet} />
             <img src={src} alt="Hero background image " />
         </picture>
-        <div className={styles.hero__content}>
+        <div>
           {children}
         </div>
     </div>

@@ -2,31 +2,40 @@
 .shop__product{
     background: g.$primary-white2;
     border-radius: 1em;
-    padding: 2em
+    padding: 1.5em;
+    width: fit-content;
+    box-shadow: -7px 9px 15px -5px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 .product__tag{
-    @include g.font-size(.3rem, 20vw, .8rem);
+    @include g.font-size(.3rem, 20vw, .7rem);
     background: g.$primary-blue;
     color: #ffff;
     width: fit-content;
-    padding: .8em 1.6rem;
-    border-radius: .8em;
+    padding: .6em .8rem;
+    border-radius: 1em;
+    text-align: center;
 }
 .img__container{
-    position: relative;
     width: 100%;
-    color: black;
 }
-.img__overlay{
-    position: absolute;
-    height: 100%;
-    width: inherit;
+.product__name{
+    @include g.font-size(.7rem, 30vw, 1rem);
+    font-weight: 600;
+    margin-bottom: .5em;
 }
 figcaption{
+    @include g.flex--row;
     border-top: 2px solid #DEDDDD;
     display: flex;
+    @include g.font-size(.6rem, 28vw, .9rem);
+    padding-top: .3em;
+    gap: .5em
+}
+figcaption s{
+    @include g.font-size(.4rem, 20vw, .7rem);
+    color: g.$secondary-grey;
 }
 .rating{
-    color: red;
+    color: g.$secondary-yellow;
     margin-left: auto;
 }

@@ -18,21 +18,26 @@
     object-fit: cover;
     aspect-ratio: 1 / 0.7;
 }
-.hero__content{
-    max-width: 80%;
-    justify-self: center;
-    align-self: center;
-}
 //responsive breakpoints
 @include g.tablet{
     .hero__sec picture img{
         width: 100%;
-        object-fit: contain;
-        aspect-ratio: 1 / 0.5;
+        object-fit: cover;
+        aspect-ratio: 1 / 0.4;
     }
-    .hero__content{
-        justify-self: flex-start;
-        align-self: center;
-        padding: 0 4em;
+    // .hero__content{
+    //     justify-self: flex-start;
+    //     align-self: center;
+    //     @include g.G-pd-md;
+    // }
+}
+@include g.desktop{
+    .hero__sec picture img{
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 1 / 0.35;
     }
+    // .hero__content{
+    //     @include g.G-pd-bg;
+    // }
 }

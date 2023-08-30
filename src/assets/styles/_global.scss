@@ -88,7 +88,9 @@ $primary-grey: #D4D4D4;
 $primary-white1: #EFF6F1;
 $primary-white2: #F9F8F8;
 $primary-black: #525C60;
-$secondary_blue: #335B6B;
+$secondary-blue: #335B6B;
+$secondary-yellow: #FFA858;
+$secondary-grey: #B8B8B8;
 
 //Additional font family
 //Additional font
@@ -120,4 +122,24 @@ $secondary_blue: #335B6B;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ }
+ @mixin G-pd-sm-L{
+  padding-left: 2.5em;
+ }
+ @mixin G-pd-sm-R{
+  padding-right: 2.5em;
+ }
+ //
+ @mixin G-pd-md-L{
+  padding-left: 4em;
+ }
+ @mixin G-pd-md-R{
+  padding-right: 4em;
+ }
+ //
+ @mixin G-pd-bg-L{
+  padding-left: 10em;
+ }
+ @mixin G-pd-bg-R{
+  padding-right: 10em;
  }

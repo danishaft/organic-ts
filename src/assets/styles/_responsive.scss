@@ -21,3 +21,9 @@ $monitor: 80em;
         @content;
     }
 }
+
+@mixin monitor{
+    @media(min-width: $monitor){
+        @content;
+    }
+}
