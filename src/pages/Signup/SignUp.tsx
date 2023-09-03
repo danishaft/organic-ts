@@ -1,12 +1,10 @@
 import Auth from "../../components/Auth/Auth"
-import Banner from "../../components/Banner/Banner"
-import BannerImg from "../../assets/images/protected.png"
+import styles from "./SignUp.module.scss"
 function SignUp() {
   return (
-    <div>
-        <Banner img={BannerImg} desc={'protected page'}/>
-        <Auth />
-    </div>
+    <section className={styles.sign__up}>
+        <Auth actionType="Sign Up"/>
+    </section>
   )
 }
 

@@ -50,13 +50,14 @@ a{
   }
   header{
     width: 100%;
-    padding: 1.3em;
+    padding: .5em 1.3em;
     position: fixed;
     top: 0;
     background-color: #ffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
   }
   .header__left{
     @include g.flex--row;
@@ -105,16 +106,16 @@ a{
   }
   .header__icons{
     @include g.flex--row;
-    @include g.font-size(.7rem, 25vw, 1.2rem);
+    @include g.font-size(.7rem, 25vw, 1rem);
     gap: .6em;
   }
   .header__icons span{
     display: inline-block;
     @include g.flex--row;
     border-radius: 50%;
-    max-width: min(2em, 2em);
+    max-width: min(1.8em, 2em);
     min-width: 1em;
-    height: 2em;
+    height: 1.8em;
     width: min(30vw, 11em);
     color: #ffff;
   }
@@ -138,7 +139,7 @@ a{
       display: none;
     }
     header{
-      padding: 1.5em 3em;
+      padding: 0 3em;
     }
     .header__nav{
       display: block;

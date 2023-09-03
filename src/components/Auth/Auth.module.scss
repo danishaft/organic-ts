@@ -1,27 +1,30 @@
 @use "../../assets/styles/style.scss" as g;
 .auth{
-    max-width: 50rem;
+    max-width: fit-content;
     background: #fff;
     box-shadow: 6px 8px 22px -1px rgba(150,145,145,0.56);
     -webkit-box-shadow: 6px 8px 22px -1px rgba(150,145,145,0.56);
     -moz-box-shadow: 6px 8px 22px -1px rgba(150,145,145,0.56);
-    margin: 3em 2em;
-    padding: 2em;
+    // margin: 3em 2em;
+    padding: 1em;
     border-radius: 1em;
+    @include g.flex--column;
+    margin: auto;
+    // background: black;
 }
-
 .right img{
     width: 100%;
-    aspect-ratio: 2 / 1.5;
     object-fit: fill;
     border-radius: 1em;
+    aspect-ratio: 1 / 0.5;
 }
 .left{
     margin-top: 1em;
+    width: 100%;
 }
-.left div{
+.left .input__container{
     margin-bottom: .7em ;
-    max-width: 50em;
+    // max-width: 50em;
 }
 label, input{
     display: block;
@@ -30,12 +33,12 @@ label{
     @include g.font-size(.5rem, 20vw, .8rem);
     font-weight: bold
 }
-input{
+.input__container input{
     border-radius: .5em;
     border: 1px solid g.$primary-green;
     outline: none;
     width: 100%;
-    padding: .5em 0;
+    padding: .5em;
 }
 .sepration{
     display: flex;
@@ -62,4 +65,24 @@ input{
 }
 .google{
     margin-right: .3em;
+}
+
+//responsive breakpoints
+@include g.tablet{
+    .auth{
+        @include g.flex--row;
+        display: flex;
+        flex-direction: row;
+        padding: 2em;
+    }
+    .right{
+    padding-right: 2em;
+    }
+    .right img{
+        object-fit: cover;
+        aspect-ratio: 1 / 2;
+    }
+    .left{
+        margin-top: 0;
+    }
 }

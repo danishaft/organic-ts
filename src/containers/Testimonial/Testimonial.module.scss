@@ -1,0 +1,104 @@
+@use "../../assets/styles/style.scss" as g;
+.testimonial{
+    // background: red;
+    max-width: 90%;
+    margin: 0 auto;
+}
+.testimonial > img{
+    display: none;
+}
+.testimonial__heading{
+    text-align: center;
+}
+.testimonial__heading p{
+    color: g.$primary-green;
+    @include g.yellowtail;
+    @include g.font-size(1rem, 20vw, 1.5rem)
+}
+.testimonial__heading h1{
+    @include g.font-size(1.5rem, 35vw, 1.8rem);
+    font-weight: bold
+}
+.testimonial figure{
+    @include g.flex--column;
+}
+.img{
+    width: fit-content;
+    margin-top: 1em;
+}
+.img img{
+    border-radius: 50%;
+}
+.rating{
+    color: g.$secondary-yellow;
+    margin-bottom: 1em;
+}
+.testimonial figure figcaption{
+    text-align: center;
+}
+.testimonial figcaption blockquote{
+    @include g.font-size(.5rem, 20vw, .8rem);
+}
+figcaption .customer__name{
+    @include g.font-size(.7rem, 25vw, 1rem);
+    font-weight: bold;
+}
+figcaption .customer__tag{
+    @include g.font-size(.4rem, 20vw, .65rem);
+}
+
+.metric__count{
+    border-top: 2px solid g.$secondary-white;
+    @include g.flex--row;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding-top: 2em ;
+    margin-top: 2em ;
+}
+.metric__count .count{
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    background: g.$secondary-white;
+    border: 3px solid g.$primary-green;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.count .desc{
+    @include g.font-size(.5rem, 20vw, .8rem);
+}
+.count .num{
+    @include g.font-size(1rem, 40vw, 1.8rem);
+    font-weight: bolder;
+}
+
+//responsive breakpoints
+@include g.desktop{
+    .testimonial{
+        max-width: 100%;
+        margin: 0;
+        display: grid;
+    }
+    .testimonial > * {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    .testimonial > img{
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 0.7;
+    }
+    .testimonial > div{
+        width: 60%;
+        margin: auto;
+        // justify-self: center;
+        // align-self: center;
+    }
+    .metric__count{
+        padding-top: 3em;
+        margin-top: 3em;
+        border: 1px solid red;
+    }
+}

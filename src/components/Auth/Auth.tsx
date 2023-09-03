@@ -1,18 +1,26 @@
-import { useState } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { useNavigate } from "react-router-dom"
 import { auth, googleProvider } from '../../config/firebaseConfig'
-import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import { User, createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { FcGoogle } from "react-icons/fc";
+import { Context } from '../../context/context';
 import Button from '../buttons/Button'
 import styles from "./Auth.module.scss"
 import regImg from "../../assets/images/regimg.jpg"
+import regImgMb from "../../assets/images/regimgMb.jpg"
 
 type inputs = {email: string, password: string}
-function Auth() {
+type formProps = {actionType: string}
+function Auth(props: formProps) {
+    const {actionType}= props
+    //form data state
     const [formData, setFormData] = useState<inputs>({
         email: "",
         password: ""
     })
-    console.log(auth.currentUser?.email)
+    //user context state for user state(logged in or out)
+    const {user, setUser} = useContext(Context)
+    const navigate = useNavigate()
     // handle changes and controls the form inputs
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
         const {name, value} = e.target
@@ -30,6 +38,14 @@ function Auth() {
             await createUserWithEmailAndPassword(auth, formData.email, formData.password)
         } catch (err){
             console.error("Error creating account", err);
+        } finally {
+            setFormData(prev => ({
+                ...prev,
+                email: "",
+                password: ""
+            }))
+            navigate("/")
+            console.log(auth.currentUser?.email)
         }
     };
     // register user with firebase authentication for google
@@ -40,14 +56,46 @@ function Auth() {
             console.error("Error creating account", err);
         }
     };
+    //login registered user when they've been logged out and to log back in
+    const logIn = async () => {
+        // try{
+        //     await createUserWithEmailAndPassword(auth, formData.email, formData.password)
+        // } catch (err){
+        //     console.error("Error creating account", err);
+        // }
+        console.log("login")
+    };
+    //checking if a user is logged in
+    useEffect(() => {
+        const unSubscribe = auth.onAuthStateChanged((authUser) => {
+          if (authUser) {
+            // User is signed in.
+            setUser(authUser!);
+          } else {
+            // User is signed out.
+            setUser(null);
+          }
+        });
+    
+        return () => {
+          // Unsubscribe from the observer when the component unmounts.
+          unSubscribe();
+        };
+      }, []);
+      console.log(user)
+
+    const action = actionType === "Log In" ? logIn : signUp
   return (
     <div className={styles.auth}>
         <div className={styles.right}>
-            <img src={regImg} alt="registration image" />
+            <picture>
+                <source media="(min-width: 48em)" srcSet={regImg} />
+                <img src={regImgMb} alt="Hero background image " />
+            </picture>
         </div>
         <div className={styles.left}>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className={styles.input__container}>
                     <label>Email:</label>
                     <input
                         type="text"
@@ -56,7 +104,7 @@ function Auth() {
                         onChange={handleChange}
                     />
                 </div>
-                <div>
+                <div className={styles.input__container}>
                     <label>Password:</label>
                     <input
                         type="text"
@@ -65,7 +113,7 @@ function Auth() {
                         onChange={handleChange}
                     />
                 </div>
-                <Button type='submit' onClick={signUp} spec='default' content='Sign Up'/>
+                <Button type='submit' onClick={action} spec='default' content={actionType}/>
                 <div className={styles.reg__options}>
                     <div className={styles.sepration}>
                         <div></div>

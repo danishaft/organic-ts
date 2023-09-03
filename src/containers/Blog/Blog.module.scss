@@ -1,0 +1,46 @@
+@use "../../assets/styles/style.scss" as g;
+// .blog{
+//     width: ;
+// }
+.blog > p{
+    color: g.$primary-green;
+    @include g.yellowtail;
+}
+.blog__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1em;
+}
+.blog__header h1{
+    @include g.font-size(.6em, 30vw, 1.1em);
+    width: 70%;
+    font-weight: bold;
+}
+
+.blog__list{
+    @include g.flex--column;
+    gap: 3em;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    // flex-grow: 1;
+}
+// .blog__list > *{
+//     flex-grow: 1;
+//     flex-shrink: 0;
+// }
+
+//breakpoints
+@include g.big-phone{
+    .blog__list{
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        justify-content: space-between;
+    }
+}
+// @include g.tablet{
+//     .blog__list{
+//         gap: .5em;
+//     }
+// }

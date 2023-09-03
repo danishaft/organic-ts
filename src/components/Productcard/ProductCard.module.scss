@@ -23,7 +23,7 @@
     font-weight: 600;
     margin-bottom: .5em;
 }
-figcaption{
+.shop__product figcaption{
     @include g.flex--row;
     border-top: 2px solid #DEDDDD;
     display: flex;
@@ -31,7 +31,7 @@ figcaption{
     padding-top: .3em;
     gap: .5em
 }
-figcaption s{
+.shop__product figcaption s{
     @include g.font-size(.4rem, 20vw, .7rem);
     color: g.$secondary-grey;
 }

@@ -20,8 +20,11 @@
 //     justify-self: center;
 //     align-self: center;
 // }
+main{
+    margin: 1em 0;
+}
 .homepage__hero {
-    margin-top: 1.3em;
+    margin-top: 0;
 }
 .hero__content{
     max-width: 80%;
@@ -113,6 +116,37 @@
     grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
     gap: 3em;
 }
+.testimonial__sec{
+    background: g.$primary-white2;
+    padding: 3em 0;
+}
+.offer__sec{
+    max-width: 100em;
+    padding: 5em 0;
+    background: g.$primary-blue;
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
+.gallery__sec{
+    background: g.$secondary-green;
+    padding: 3em 0;
+    // @include g.G-pd-sm-L;
+    // @include g.G-pd-sm-R;
+}
+.blog__sec{
+    margin: 5em 0;
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
+.newsletter__sec{
+    margin: 5em 0;
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
+.footer__sec{
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
 
 //responsive breakpoints
 @include g.tablet{
@@ -158,11 +192,30 @@
         @include g.G-pd-md-L;
         @include g.G-pd-md-R;
     }
+    .offer__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R;
+    }
+    .blog__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R;
+    }
+    .newsletter__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R;
+    }
+    .footer__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R;
+    }
 }
 //desktop
 @include g.desktop{
+    main{
+        margin: 3em 0;
+    }
     .homepage__hero {
-        margin-top: 6.7em;
+        // margin-top: 6.7em;
     }
     .hero__content{
         width: 50%;
@@ -182,6 +235,25 @@
         padding-left: 1.5em;
     }
     .shop__sec{
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R;
+    }
+    .testimonial__sec{
+        padding: 0;
+    }
+    .offer__sec{
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R;
+    }
+    .blog__sec{
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R;
+    }
+    .newsletter__sec{
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R;
+    }
+    .footer__sec{
         @include g.G-pd-bg-L;
         @include g.G-pd-bg-R;
     }

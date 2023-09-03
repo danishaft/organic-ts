@@ -36,11 +36,10 @@ function Header() {
                     </li>
                     <li role="list"><Link to={"/shop"}>Shop</Link></li>
                     <li role="list"><Link to={"/news"}>News</Link></li>
-                    <li role="list"><Link to={"/signup"}>SignUp</Link></li>
                 </ul>
             </nav>
             <div className={styles.header__icons}>
-                <span><BsPerson/></span>
+                <Link to={"/signup"}><span><BsPerson/></span></Link>
                 <span><HiOutlineShoppingCart/></span>
             </div>
         </header>

@@ -1,0 +1,73 @@
+@use "../../assets/styles/style.scss" as g;
+.newsletter{
+    display: grid;
+    // padding: 1em;
+}
+.newsletter > *{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+.newsletter__img img{
+    border-radius: .8em;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 0.3;
+
+}
+.newsletter__content{
+    @include g.flex--row;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+    // background: blue;
+    padding: 1em;
+    width: 100%;
+}
+.newsletter__content p{
+    @include g.font-size(.5rem, 20vw, .8rem);
+    color: #ffff;
+
+}
+.newsletter__content input{
+    border: none;
+    display: block;
+    border-radius: .5em;
+    width: 100%;
+    @include g.font-size(.3rem, 20vw, .5rem);
+    height: max-content;
+    padding: .8em;
+    outline: none;
+    margin-right: .2em;
+}
+.newsletter__content form{
+    @include g.flex--row;
+    // background: red;
+}
+.newsletter__content form > *{
+    height: 100%;
+}
+
+//breakpoints 
+@include g.small-phone{
+    .newsletter__content p{
+        @include g.font-size(.5rem, 20vw, 1.1rem);
+    }
+    .newsletter__content input{
+        @include g.font-size(.3rem, 20vw, .6rem);
+        padding: 1em 2.8em;
+        margin-right: .2em;
+    }
+}
+
+@include g.big-phone{
+    .newsletter__content{
+        padding: 1em 3em;
+    }
+}
+@include g.tablet{
+    .newsletter__content{
+        padding: 1em 5em;
+    }
+    .newsletter__img img{
+        aspect-ratio: 2 / 0.3;
+    }
+}

@@ -91,6 +91,8 @@ $primary-black: #525C60;
 $secondary-blue: #335B6B;
 $secondary-yellow: #FFA858;
 $secondary-grey: #B8B8B8;
+$secondary-white: #F1F1F1;
+$secondary-green: #F1F8F4;
 
 //Additional font family
 //Additional font
@@ -108,10 +110,7 @@ $secondary-grey: #B8B8B8;
 @mixin font-size($min, $val, $max){
     font-size: clamp($min, $val, $max);
   }
-
- main{
-  margin-top: 5em;
- } 
+ 
  @mixin flex--row{
   display:flex;
   justify-content: center;

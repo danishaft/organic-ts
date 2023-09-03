@@ -1,15 +1,20 @@
 //breakpoints
-$phone: 38em;
+$small-phone: 30em;
+$big-phone: 38em;
 $tablet: 48em;
 $desktop: 64em;
 $monitor: 80em;
 
-@mixin phone{
-    @media(min-width: $phone){
+@mixin small-phone{
+    @media(min-width: $small-phone){
         @content;
     }
 }
-
+@mixin big-phone{
+    @media(min-width: $big-phone){
+        @content;
+    }
+}
 @mixin tablet{
     @media(min-width: $tablet){
         @content;

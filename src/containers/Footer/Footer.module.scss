@@ -1,0 +1,67 @@
+@use "../../assets/styles/style.scss" as g;
+footer{
+    text-align: center;
+}
+footer h1{
+    @include g.font-size(.6em, 30vw, 1em);
+}
+footer > div:nth-child(1), footer > div:nth-child(2){
+    border-bottom: 1px solid g.$primary-grey;
+}
+footer ul{
+    list-style: none;
+    padding: 0;
+}
+footer ul li{
+    margin: .3em 0;
+}
+footer p {
+    @include g.font-size(.4em, 30vw, .65em);
+}
+footer .about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    margin-bottom: .8em;
+}
+footer .about .socials{
+    margin: .6em 0;
+    width: 100%;
+    @include g.flex--row;
+}
+footer .about .socials div{
+    max-width: 2em;
+    max-height: 2em;
+    padding: .5em;
+    background: g.$primary-white1;
+    margin: 0 .3em;
+    border-radius: 50%;
+    @include g.flex--row
+}
+footer .about img{
+    width: 40%;
+    margin-bottom: .4em;
+}
+
+//responsive breakpoints
+@include g.tablet{
+    footer{
+        @include g.flex--row;
+        margin-bottom: 1em;
+    }
+    footer > div:nth-child(1), footer > div:nth-child(2){
+        border-bottom: none;
+    }
+    footer > div:nth-child(1){
+        border-right: 2px solid g.$primary-grey;
+        padding-right: .8em;
+    }
+    footer > div:nth-child(3){
+        border-left: 2px solid g.$primary-grey;
+        padding-left: .8em;
+    }
+    footer .about{
+        padding: 0 1.5em;
+    }
+}

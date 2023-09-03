@@ -1,27 +1,36 @@
 // reuseable button
 import { BsArrowRightShort } from "react-icons/bs";
+// import styles from "./Button.module.scss"
 type ButtonProps = {
     type: "button"|"submit"|undefined;
     color?: string;
-    spec: string;
+    spec?: string;
     bgColor?: string;
     content: string;
+    onClick?: ()=> void;
 }
 function Button (props: ButtonProps) {
     const {color, spec, bgColor, content, type, onClick} = props;
     const styles = {
         color: color || 'white',
         backgroundColor: bgColor || '#274C5B',
-        fontSize: 'clamp(.5rem, 20vw, .8rem)',
+        fontSize: 'clamp(.4rem, 20vw, .5rem)',
         borderRadius: '.7em',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         border: 'none',
-        padding: '.8em 1.3em',
+        padding: '.6em 1.1em',
         boxShadow: '3px 4px 19px 0px rgba(39,76,91,0.56)',
-        webkitBoxShadow: '3px 4px 19px 0px rgba(39,76,91,0.56)',
-        mozBoxShadow: '3px 4px 19px 0px rgba(39,76,91,0.56)'
+        WebkitBoxShadow: '3px 4px 19px 0px rgba(39,76,91,0.56)',
+        MozBoxShadow: '3px 4px 19px 0px rgba(39,76,91,0.56)',
+
+        //media query for phones above 48px
+        '@media(minWidth: 480px)':{
+            fontSize: 'clamp(.6rem, 25vw, .8rem)',
+            padding: '.8em 1.3em',
+            color: 'red',
+        },
     }
     const iconStyles = {
         display: 'flex',
@@ -30,7 +39,7 @@ function Button (props: ButtonProps) {
         marginLeft: '.5em',
         backgroundColor: '#335B6B',
         color: '#ffff',
-        borderRadius: '50%'
+        borderRadius: '50%',
     }
   return (
     <button onClick={onClick} type={type} style={styles}>

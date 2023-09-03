@@ -11,6 +11,12 @@ import broccoli from "../../assets/images/broccoli.png"
 import Button from "../../components/buttons/Button"
 import ProductCard from "../../components/Productcard/ProductCard"
 import Hero from "../../containers/Hero/Hero"
+import Testimonial from "../../containers/Testimonial/Testimonial"
+import Offer from "../../containers/Offer/Offer"
+import Gallery from "../../containers/Gallery/Gallery"
+import Blog from "../../containers/Blog/Blog"
+import NewsLetter from "../../containers/Newsletter/NewsLetter"
+import Footer from "../../containers/Footer/Footer"
 function HomePage() {
   return (
     <main>
@@ -86,9 +92,34 @@ function HomePage() {
       {/* end of shop sec */}
       {/* start of testimonial */}
         <section className={styles.testimonial__sec}>
-
+          <Testimonial/>
         </section>
       {/* end of testimonial */}
+      {/* start of offer section */}
+      <section className={styles.offer__sec}>
+          <Offer/>
+      </section>
+      {/* end of offer section */}
+      {/* start of gallery section */}
+      <section className={styles.gallery__sec}>
+        <Gallery/>
+      </section>
+      {/* end of gallery section */}
+      {/* start of blog sec */}
+      <section className={styles.blog__sec}>
+        <Blog/>
+      </section>
+      {/* end of blog sec */}
+      {/* start of newsletter sec */}
+        <section className={styles.newsletter__sec}>
+          <NewsLetter/>
+        </section>
+      {/* end of newsletter sec */}
+      {/* start of footer sec */}
+        <section className={styles.footer__sec}>
+          <Footer/>
+        </section>
+      {/* end of footer sec */}
     </main>
   )
 }
