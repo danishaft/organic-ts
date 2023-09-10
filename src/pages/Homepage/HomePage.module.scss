@@ -21,7 +21,7 @@
 //     align-self: center;
 // }
 main{
-    margin: 1em 0;
+    margin: 3.4em 0;
 }
 .homepage__hero {
     margin-top: 0;
@@ -55,39 +55,26 @@ main{
     gap: 1em;
 }
 
-
-.about__sec{
-    background: g.$primary-white2;
-    width: 100%;
-}
-.about__sec > img {
-    display: none;
-}
-.about__content{
-    max-width: 80%;
-    padding: 1em;
-    margin: 0 auto;
-}
-.about__content > p:nth-child(1){
+.about__sec .title{
     @include g.yellowtail;
     @include g.font-size(.7rem, 20vw, 1.1rem);
     color: g.$primary-green;
 }
-.about__content > h1{
-    @include g.font-size(.1rem, 30vw, 1.6rem)
+.about__sec h1{
+    @include g.font-size(.1rem, 30vw, 1.6rem);
 }
-.about__content > p:nth-child(3){
+.about__sec .text{
     color: g.$primary-black;
     @include g.font-size(.5rem, 20vw, .8rem)
 }
-.about__options{
+.about__sec .about__options{
     padding: .4em 0;
 }
-.option{
+.about__sec .about__options .option{
     display: flex;
     margin-bottom: .5em;
 }
-.option__icon{
+.about__options .option .option__icon{
     background: #ffff;
     display: flex;
     align-items: center;
@@ -167,27 +154,6 @@ main{
         @include g.G-pd-md-L;
         @include g.G-pd-md-R;
     }
-    .about__sec{
-        width: 100%;
-        display: grid;
-    }
-    .about__sec > * {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-    }
-    .about__sec > img {
-        display: block;
-        width: 100%;
-        object-fit: cover;
-        aspect-ratio: 1 / 0.57;
-    }
-    .about__content{
-        max-width: 53%;
-        margin: 0;
-        justify-self: flex-end;
-        align-self: center;
-        @include g.G-pd-md-R;
-    }
     .shop__sec{
         @include g.G-pd-md-L;
         @include g.G-pd-md-R;
@@ -226,13 +192,6 @@ main{
         padding: 6em 0;
         @include g.G-pd-bg-L;
         @include g.G-pd-bg-R;
-    }
-    .about__sec > img {
-        aspect-ratio: 1 / 0.4;
-    }
-    .about__content{
-        @include g.G-pd-bg-R;
-        padding-left: 1.5em;
     }
     .shop__sec{
         @include g.G-pd-bg-L;

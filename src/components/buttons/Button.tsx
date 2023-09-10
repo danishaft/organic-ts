@@ -1,6 +1,5 @@
 // reuseable button
 import { BsArrowRightShort } from "react-icons/bs";
-// import styles from "./Button.module.scss"
 type ButtonProps = {
     type: "button"|"submit"|undefined;
     color?: string;
@@ -26,10 +25,10 @@ function Button (props: ButtonProps) {
         MozBoxShadow: '3px 4px 19px 0px rgba(39,76,91,0.56)',
 
         //media query for phones above 48px
-        '@media(minWidth: 480px)':{
-            fontSize: 'clamp(.6rem, 25vw, .8rem)',
-            padding: '.8em 1.3em',
+        '@media(MinWidth: 480px)':{
+            fontSize: 'clamp(.6rem, 25vw, 1rem)',
             color: 'red',
+            padding: '.8em 1.3em',
         },
     }
     const iconStyles = {

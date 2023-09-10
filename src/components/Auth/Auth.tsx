@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from 'react'
 import { useNavigate } from "react-router-dom"
 import { auth, googleProvider } from '../../config/firebaseConfig'
-import { User, createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { FcGoogle } from "react-icons/fc";
-import { Context } from '../../context/context';
+import { Context } from '../../contexts/context';
 import Button from '../buttons/Button'
 import styles from "./Auth.module.scss"
 import regImg from "../../assets/images/regimg.jpg"
@@ -76,13 +76,12 @@ function Auth(props: formProps) {
             setUser(null);
           }
         });
-    
+        console.log(user)
         return () => {
           // Unsubscribe from the observer when the component unmounts.
           unSubscribe();
         };
       }, []);
-      console.log(user)
 
     const action = actionType === "Log In" ? logIn : signUp
   return (

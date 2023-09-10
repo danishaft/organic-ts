@@ -1,0 +1,15 @@
+@use "../../assets/styles/style.scss" as g;
+.offerCard{
+    min-width: 4em;
+    max-width: 15em;
+    width: 100%;
+    // background: red;
+}
+.offerCard .img img{
+    border-radius: 1em;
+    width: 100%;
+}
+.offerCard p{
+    color: #ffff;
+    text-align: center;
+}

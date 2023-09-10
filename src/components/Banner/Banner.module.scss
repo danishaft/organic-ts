@@ -2,3 +2,7 @@
 .banner{
     width: 100%;
 }
+.banner img{
+    aspect-ratio: 1/ 0.15;
+    object-fit: cover;
+}

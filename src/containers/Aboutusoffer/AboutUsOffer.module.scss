@@ -1,0 +1,20 @@
+@use "../../assets/styles/style.scss" as g;
+.aboutUsOffer{
+    @include g.flex--column;
+}
+.aboutUsOffer .title{
+    color: g.$primary-green;
+    @include g.yellowtail;
+    @include g.font-size(.7rem, 20vw, 1.1rem);
+}
+.aboutUsOffer h1{
+    color: #ffff;
+    @include g.font-size(.1rem, 30vw, 1.6rem);
+}
+.aboutUsOffer .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 1em;
+}

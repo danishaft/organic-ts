@@ -4,7 +4,13 @@
     border-radius: 1em;
     padding: 1.5em;
     width: fit-content;
+    cursor: pointer;
+    box-shadow: 0px 9px 15px -5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.shop__product:hover{
     box-shadow: -7px 9px 15px -5px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+    transform: scale(1.05);
 }
 .product__tag{
     @include g.font-size(.3rem, 20vw, .7rem);

@@ -1,0 +1,30 @@
+@use "../../assets/styles/style.scss" as g;
+.our__team{
+    // background: red;
+}
+.our__team .heading{
+    text-align: center;
+}
+.our__team .heading .title{
+    @include g.yellowtail;
+    @include g.font-size(.7rem, 20vw, 1.1rem);
+    color: g.$primary-green;
+}
+.our__team .heading h1{
+    @include g.font-size(.1rem, 30vw, 1.6rem);
+}
+.our__team .heading .text{
+    color: g.$primary-black;
+    @include g.font-size(.4rem, 20vw, .6rem);
+    margin: 1.7em auto;
+    max-width: 35em;
+}
+.our__team .cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.our__team .cards > * {
+      flex-grow: 1;
+}

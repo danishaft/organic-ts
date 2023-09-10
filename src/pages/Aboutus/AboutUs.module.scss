@@ -1,0 +1,110 @@
+@use "../../assets/styles/style.scss" as g;
+
+.main .aboutUs__sec{
+    // background: red;
+    padding: 2em 0;
+}
+.aboutUs__sec .title{
+    @include g.yellowtail;
+    @include g.font-size(.7rem, 20vw, 1.1rem);
+    color: g.$primary-green;
+}
+.aboutUs__sec h1{
+    @include g.font-size(.1rem, 30vw, 1.6rem);
+}
+.aboutUs__sec .text{
+    color: g.$primary-black;
+    @include g.font-size(.5rem, 20vw, .8rem);
+}
+.aboutUs__sec .content__points{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2em 0;
+}
+.aboutUs__sec .content__points .point{
+    display: flex;
+    align-items: center;
+    @include g.font-size(1rem, 30vw, 2.4rem);
+    color: g.$primary-green;
+}
+.aboutUs__sec .point p{
+    @include g.font-size(.3rem, 25vw, .6rem);
+    margin-left: .4em;
+}
+.whyChooseUs__sec{
+    background: g.$primary-white2;
+    padding: 2em 0;
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R
+}
+.ourTeam__sec{
+    padding: 3em 0;
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
+.aboutUsOffer__sec{
+    background: g.$primary-blue;
+    padding: 3em 0;
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
+.newsLetter__sec{
+    margin: 2em 0;
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
+.footer__sec{
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
+
+//responsive breakpoints
+@include g.tablet{
+    .whyChooseUs__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R
+    }
+    .ourTeam__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R
+    }
+    .aboutUsOffer__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R;
+    }
+    .newsLetter__sec{
+        margin: 3em 0;
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R;
+    }
+    .footer__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R;
+    }
+}
+
+@include g.desktop{
+    .whyChooseUs__sec{
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R
+    }
+    .ourTeam__sec{
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R
+    }
+    .aboutUsOffer__sec{
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R;
+    }
+    .newsLetter__sec{
+        margin: 4em 0;
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R;
+    }
+    .footer__sec{
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R;
+    }
+}
+

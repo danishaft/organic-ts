@@ -1,0 +1,59 @@
+@use "../../assets/styles/style.scss" as g;
+.shopList__sec{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(15em, 100%), 1fr));
+    justify-items: center;
+    align-items: center;
+    gap: 3em;
+    margin: 4em 0;
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
+.newsLetter__sec{
+    margin: 4em 0;
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
+.footer__sec{
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
+
+
+//responsive breakpoints
+@include g.tablet{
+    .shopList__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R;
+    }
+    .newsLetter__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R;
+    }
+    .footer__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R;
+    }
+}
+@include g.desktop{
+    .shopList__sec{
+        grid-template-columns: repeat(auto-fit, minmax(min(12em, 100%), 1fr));
+        gap: 2em;
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R;
+    }
+    .newsLetter__sec{
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R;
+    }
+    .footer__sec{
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R;
+    }
+}
+@include g.monitor{
+    .shopList__sec{
+        grid-template-columns: repeat(auto-fit, minmax(min(14em, 100%), 1fr));
+        gap: 2em;
+    }
+}

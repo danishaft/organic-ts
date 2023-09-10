@@ -1,0 +1,27 @@
+@use "../../assets/styles/style.scss" as g;
+.team__card{
+    max-width: 10em;
+    // border: 1px solid red;
+}
+.team__card img{
+    border-radius: .8em .8em 0 0;
+}
+.team__card figcaption{
+    background: g.$primary-white2;
+    border-radius: 0 0 .8em .8em;
+    padding: .9em .6em;
+}
+.team__card figcaption .bottom__flex{
+    @include g.flex--row;
+    justify-content: space-between;
+}
+.team__card figcaption .name{
+    @include g.font-size(.6rem, 25vw, .8rem);
+}
+.team__card figcaption .bottom__flex{
+    @include g.font-size(.4rem, 20vw, .7rem);
+    @include g.yellowtail;
+}
+.team__card figcaption .position{
+    color: g.$primary-green;
+}

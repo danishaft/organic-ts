@@ -1,0 +1,50 @@
+@use  "../../assets/styles/style.scss" as g;
+.about{
+    width: 100%;
+}
+.about .about__bgImg img {
+    display: none;
+}
+.about__content{
+    max-width: 80%;
+    padding: 1em;
+    margin: 0 auto;
+}
+
+
+//responsive breakpoints
+@include g.tablet{
+    .about{
+        width: 100%;
+        @include g.flex--row;
+    }
+    .about .about__bgImg {
+        width: 50%;
+        height: 100%;
+        margin: 0;
+    }
+    .about .about__bgImg img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+    }
+    .about__content{
+        max-width: 53%;
+        margin: 0;
+        justify-self: flex-end;
+        align-self: center;
+        @include g.G-pd-md-R;
+    }
+}
+
+@include g.desktop{
+    .about > img {
+        aspect-ratio: 1 / 0.4;
+    }
+    .about__content{
+        @include g.G-pd-bg-R;
+        padding-left: 1.5em;
+    }
+}

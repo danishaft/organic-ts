@@ -1,0 +1,86 @@
+@use "../../assets/styles/style.scss" as g;
+
+// .whyChooseUs{
+//     background: blue;
+// }
+.whyChooseUs .heading{
+    margin-bottom: 1.5em;
+}
+.whyChooseUs .heading .title{
+    @include g.yellowtail;
+    @include g.font-size(.7rem, 20vw, 1.1rem);
+    color: g.$primary-green;
+}
+.whyChooseUs .heading h1{
+    @include g.font-size(.1rem, 30vw, 1.6rem);
+}
+.whyChooseUs .top__content .point{
+    @include g.flex--row;
+    background: #ECECEC;
+    border-radius: 1.5rem;
+    width: fit-content;
+    padding: .8em 4em .8em .8em;
+    @include g.font-size(.5rem, 20vw, .8rem);
+    margin: .8em 0;
+}
+.whyChooseUs .top__content .point>:first-child {
+    color: g.$primary-green;
+    margin-right: .2em;
+}
+.whyChooseUs .top__content .point__text{
+    color: g.$primary-black;
+    @include g.font-size(.4rem, 20vw, .6rem);
+    margin-left: 2em;
+}
+.whyChooseUs .text{
+    color: g.$primary-black;
+    @include g.font-size(.4rem, 20vw, .6rem);
+}
+.whyChooseUs .top__sec .top__img{
+    display: none;
+}
+
+.whyChooseUs .bottom__sec{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.7em;
+    margin-top: 3em;
+}
+.whyChooseUs .bottom__sec .main__point{
+    @include g.flex--column;
+    text-align: center;
+    background: #ffff;
+    border-radius: 1em;
+    padding: 1em .6em;
+    max-width: 7.5em;
+}
+.whyChooseUs .main__point> span{
+    background: g.$primary-white2;
+    width: 40%;
+    padding: .7em;
+    border-radius: .5em;
+}
+.whyChooseUs .main__point .point__title{
+    @include g.font-size(.6rem, 25vw, .8rem);
+    padding: .3em 0;
+}
+
+//responsive breakpoints
+@include g.tablet{
+    .whyChooseUs .top__sec{
+        @include g.flex--row;
+        gap: 2em;
+    }
+    .whyChooseUs .top__sec .top__content{
+        width: 50%;
+    }
+    .whyChooseUs .top__sec .top__img{
+        display: block;
+        width: 50%;
+    }
+    .whyChooseUs .top__img img{
+        border-radius: 1em;
+        // aspect-ratio: 1 / 1;
+    }
+}

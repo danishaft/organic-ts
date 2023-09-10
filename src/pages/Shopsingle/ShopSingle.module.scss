@@ -1,0 +1,56 @@
+@use "../../assets/styles/style.scss" as g;
+.singleProduct__sec{
+    margin-top: 3em;
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
+.single__product{
+    @include g.flex--row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    // border: 1px solid red;
+    margin-bottom: 2em;
+}
+.single__product .product__img{
+    width: 100%;
+}
+.product__img img{
+    border-radius: 1em;
+    box-shadow: 0px 9px 15px -5px rgba(0,0,0,0.1);
+}
+
+.relatedProduct__sec{
+    margin-top: 3em;
+    @include g.G-pd-sm-L;
+    @include g.G-pd-sm-R;
+}
+.relatedProduct__list{
+    @include g.flex--row;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+
+//responsive breakpoints
+@include g.tablet{
+    .singleProduct__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R;
+    }
+    .relatedProduct__sec{
+        @include g.G-pd-md-L;
+        @include g.G-pd-md-R;
+    }
+}
+
+@include g.desktop{
+    .singleProduct__sec{
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R;
+    }
+    .relatedProduct__sec{
+        @include g.G-pd-bg-L;
+        @include g.G-pd-bg-R;
+    }
+}
